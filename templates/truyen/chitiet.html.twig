@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chương {{ chuong.id }} - {{ chuong.tenchuong }} - {{ chuong.truyen.tentruyen }}{% endblock %}
+
+{% block body %}
+    <h2>Chương {{ chuong.id }} - {{ chuong.tenchuong }}</h2>
+    <h3>Truyện: {{ chuong.truyen.tentruyen }}</h3>
+    <div>
+        {{ chuong.noidung }}
+    </div>
+{% endblock %}

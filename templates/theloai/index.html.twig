@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Theloai index{% endblock %}
+
+{% block body %}
+    <h1>Theloai</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ten the loai</th>
+            <th>View</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in theloai %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.tenTheLoai }}</td>
+                <td>
+                    <a href="{{ path('theloai_chitiet', { 'name': 'theloai_' ~ item.getTenTheLoai() }) }}">View Theloai</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

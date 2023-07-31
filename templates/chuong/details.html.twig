@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('chuong_list') }}" class="btn btn-default">Back to Chuong List</a>
+    <hr/>
+    <h2 class="page-header">{{ tenchuong }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Content: {{ noidung }}</li>
+        <!-- Add more details here if needed, e.g., category, priority, dueDate, etc. -->
+    </ul>
+    <!-- Display any additional information you want here -->
+{% endblock %}

@@ -1,0 +1,44 @@
+.updated-Container{
+    width: 100%;
+    box-shadow: 0 0 10px black;
+    padding-top: 24px;
+}
+
+
+.image-box{
+    position: relative;
+    height: auto;
+    margin-bottom: 24px;
+    overflow: hidden;
+
+}
+.updated-story-image{
+    width: calc(100% - 40px);
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+
+
+}
+.image-content{
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    position: absolute;
+    bottom: -100%;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 30%;
+    box-sizing: border-box;
+    transition: all 0.55s;
+
+}
+.image-content p{
+    font-size: 15px;
+    padding: 15px 5px 0;
+    text-align: center;
+}
+
+.image-box:hover .image-content{
+    bottom: 0;
+}

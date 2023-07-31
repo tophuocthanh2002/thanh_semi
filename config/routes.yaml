@@ -1,0 +1,68 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+truyen_delete:
+    path: /truyen/delete/{id}
+    controller: App\Controller\TruyenController::delete
+    methods: ['GET', 'POST']
+
+tacgia_details:
+    path: /tacgia/details/{id}
+    controller: App\Controller\TacgiaController::detailsAction
+    methods: [GET]
+
+tacgia_edit:
+    path: /tacgia/edit/{id}
+    controller: App\Controller\TacgiaController::editAction
+    methods: ['GET', 'POST']
+
+app_doctruyen:
+    path: /doctruyen/{id}
+    controller: App\Controller\DoctruyenController::viewChuong
+    methods: ['GET']
+
+chuong_create:
+    path: /chuong/create
+    controller: App\Controller\ChuongController::createAction
+    methods: ['GET', 'POST']
+
+app_nguoidung_create:
+    path: /nguoidung/create
+    controller: App\Controller\NguoidungController::createAction
+    methods: [GET, POST]
+
+
+app_nguoidung_edit:
+    path: /nguoidung/edit
+    controller: App\Controller\NguoidungController::editAction
+    methods: [GET, POST]
+
+
+
+theloai_chitiet:
+    path: /chitiet/{name}
+    controller: App\Controller\TheloaiController::chitietAction
+    methods: ['GET', 'POST']
+
+
+app_login:
+    path: /login
+    controller: App\Controller\LoginController::index
+    methods:  ['GET', 'POST']
+
+
+# config/routes.yaml
+
+app_logout:
+    path: /logout
+    controller: App\Controller\LoginController::logout
+
+app_dangnhap:
+    path: /dangnhap
+    controller: App\Controller\LoginController::login
+    methods: [GET, POST]
+app_chitiettruyen:
+    path: /truyen/{id}/chuong/{chuong}
+    controller: App\Controller\TruyenController::chitiettruyen
+

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+
+
+
+        </head>
+
+            <tr>
+                <th>#</th>
+                <th>The Loai</th>
+                <th>Tac gia</th>
+                <th>Ten Truyen</th>
+                <th>Hinh anh</th>
+                <th>Mo Ta</th>
+                <th>Ngay Dang</th>
+                <th>Do</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for truyen in tacgias %}
+                <tr>
+                    <th scope="row">{{ truyen.id }}</th>
+                    <td>{{ truyen.theloai.id }}</td>
+                    <td>{{ truyen.tacgia.id }}</td>
+                    <td>{{ truyen.tentruyen }}</td>
+                    <td>{{ truyen.hinhanh }}</td>
+                    <td>{{ truyen.mota }}</td>
+                    <td>{{ truyen.ngaydang|date('F j, Y, g:i a') }}</td>
+
+                    <td>
+                        <a href="{{ path('tacgia_details', {'id': truyen.id}) }} " class='btn btn-success'>View</a>
+                        <a href="{{ path('tacgia_edit', {'id': truyen.id}) }}" class='btn btn-default'>Edit</a>
+                        <a href="{{ path('tacgia_delete', {'id': truyen.id}) }}" class='btn btn-danger'>Delete</a>
+                    </td>
+                    <td>
+                        <li><a href="{{ path('chuong_list') }}">Chỉnh Chương</a></li>
+                        <li><a href="{{ path('nguoidung_list') }}">Chỉnh You</a></li>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

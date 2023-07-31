@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>nguoidung </h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tendangnhap</th>
+            <th>Password</th>
+            <th>Role</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for nguoidung in nguoidung %}
+            <tr>
+                <td>{{ nguoidung.getId() }}</td>
+                <td>{{ nguoidung.getTendangnhap() }}</td>
+                <td>{{ nguoidung.getMatkhau() }}</td>
+                <td>{{ nguoidung.getRole() ? nguoidung.getRole()|json_encode : '' }}</td>
+                <td>
+                    <a href="{{ path('nguoidung_details', {'id': nguoidung.id}) }} " class='btn btn-success'>View</a>
+                    <a href="{{ path('nguoidung_delete', {'id': nguoidung.id}) }}" class='btn btn-danger'>Delete</a>
+                    <a href="{{ path('nguoidung_edit', {'id': nguoidung.id}) }}" class='btn btn-default'>Edit</a>
+                </td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

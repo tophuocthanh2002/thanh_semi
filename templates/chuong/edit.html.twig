@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {'method': 'POST'}) }}
+    <div class="form-group">
+        <label for="chuong_tenchuong">Tên chương:</label>
+        {{ form_widget(form.tenchuong, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Tên chương'
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.tenchuong) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="chuong_noidung">Nội dung:</label>
+        {{ form_widget(form.noidung, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Nội dung'
+            }
+        }) }}
+    </div>
+
+    <!-- Add more fields here if needed -->
+
+    <input type="submit" value="Save Changes" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

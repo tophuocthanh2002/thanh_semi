@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="truyen_tentruyen">Tên Đăng nhập:</label>
+        {{ form_widget(form.tendangnhap, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Tên Đăng nhập'
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.tendangnhap) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="truyen_tacgia">Mật khẩu:</label>
+        {{ form_widget(form.matkhau, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Mật khẩu'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="truyen_theloai">Role:</label>
+        {{ form_widget(form.role, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Role'
+            }
+        }) }}
+    </div>
+
+
+    <input type="submit" name="create_truyen" value="Create" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

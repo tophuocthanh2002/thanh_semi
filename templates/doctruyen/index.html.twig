@@ -1,0 +1,17 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}Danh sách Truyện{% endblock %}
+
+{% block body %}
+    <h2 class="page-header">Danh sách Truyện</h2>
+    <ul class="list-group">
+        {% for truyen in truyen %}
+            <li class="list-group-item">
+                <a href="{{ path('details_show', {'id': truyen.id}) }}">
+                    {{ truyen.tentruyen }}
+                </a>
+                <a href="{{ path('app_doctruyen', {'id': truyen.id}) }}" class="btn btn-primary btn-doc-truyen">Đọc Truyện</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

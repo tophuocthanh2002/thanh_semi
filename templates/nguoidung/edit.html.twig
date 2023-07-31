@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="nguoidung_tendangnhap">Tên Đăng nhập:</label>
+        {{ form_widget(form.tendangnhap, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Tên Đăng nhập'
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.tendangnhap) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="nguoidung_matkhau">Mật khẩu:</label>
+        {{ form_widget(form.matkhau, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Mật khẩu'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="nguoidung_role">Role:</label>
+        {{ form_widget(form.role, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Role'
+            }
+        }) }}
+    </div>
+
+    <!-- Add more fields here if needed -->
+
+    <input type="submit" value="Save Changes" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

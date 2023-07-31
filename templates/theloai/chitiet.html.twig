@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if entityType == 'theloai' and entityObject %}
+        Details of {{ entityObject.getTenTheLoai() }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if entityType == 'theloai' and entityObject %}
+        <h1>{{ entityObject.getTenTheLoai() }}</h1>
+        <p>ID: {{ entityObject.getId() }}</p>
+        <p>Other details and information about the thể loại.</p>
+    {% else %}
+        <p>Entity not found.</p>
+    {% endif %}
+{% endblock %}

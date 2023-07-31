@@ -1,0 +1,47 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <style>
+        .hinh {
+            width: 30%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            float: left;
+        }
+
+        .btn-doc-truyen {
+            margin-top: 20px;
+        }
+
+    </style>
+
+{% if truyen.chuongs|length > 0 %}
+        {% for chuong in truyen.chuongs %}
+            <div class="content" id="chuong-{{ chuong.id }}">
+                <h3 class="page-header">{{ chuong.tenchuong }}</h3>
+                {% for paragraph in chuong.noidung|split('<br>') %}
+                    <p>{{ paragraph|trim }}</p>
+                {% endfor %}
+                <div class="navigation">
+                    {% if chuong.id > 1 %}
+                        <a href="#chuong-{{ chuong.id - 1 }}" class="btn btn-primary">
+                            Chương trước đó
+                        </a>
+                    {% endif %}
+
+                    {% if chuong.id < truyen.chuongs|length %}
+                        <a href="#chuong-{{ chuong.id + 1 }}" class="btn btn-primary">
+                            Chương kế tiếp
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+<p>Chưa có chương thì xem cái gì, đã đang bài đâu/p>
+    {% endif %}
+
+    {% block chapter_content %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+    <a href="{{ path('nguoidung_list') }}" class="\btn btn-default">Back to truyen List</a>
+    <hr/>
+    <h2 class="page-header">{{ nguoidung.id }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Tên đăng nhập: {{ nguoidung.tendangnhap}}</li>
+        <li class="list-group-item">Mật khẩu: {{ nguoidung.matkhau }}</li>
+        <li class="list-group-item">Role: {{ nguoidung.role }}</li>
+
+
+    </ul>
+
+{% endblock %}

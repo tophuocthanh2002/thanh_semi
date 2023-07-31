@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Tên chương</th>
+                <th>Nội dung</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for chuong in chuong %} {# Use 'chuong' (singular) here #}
+                <tr>
+                    <th scope="row">{{ chuong.id }}</th>
+                    <td>{{ chuong.tenchuong }}</td>
+                    <td>{{ chuong.noidung }}</td>
+                    <td>
+                        {# You can add your buttons here for View, Edit, Delete #}
+                        <a href="{{ path('chuong_details', {'id': chuong.id}) }} " class='btn btn-success'>View</a>
+                        <a href="{{ path('chuong_edit', {'id': chuong.id}) }}" class='btn btn-default'>Edit</a>
+                        <a href="{{ path('chuong_delete', {'id': chuong.id}) }}" class='btn btn-danger'>Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+            <a href="{{ path('app_list') }}" class="\btn btn-default">Back to truyen List</a>
+            <hr/>
+            <h2 class="page-header">{{ truyen.tentruyen }}</h2>
+            <ul class="list-group">
+                <li class="list-group-item">TheLoai: {{ truyen.theloai.id }}</li>
+                <li class="list-group-item">Tacgia: {{ truyen.tacgia.id }}</li>
+                <li class="list-group-item">Hinhanh: {{ truyen.hinhanh }}</li>
+                <li class="list-group-item">Mota: {{ truyen.mota }}</li>
+                <li class="list-group-item">Due: <strong>{{ truyen.ngaydang|date('F j,Y, g:i a') }}</strong></li>
+            </ul>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}Nội Dung Truyện{% endblock %}
+
+{% block body %}
+<style>
+    .page-header {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: brown;
+    }
+
+    .list-group-item {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        color: #007bff;
+        width: 500px;
+    }
+
+    .list-group-item a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .content {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+</style>
+<h2 class="page-header">{{ truyen.tentruyen }}</h2>
+{% if truyen.chuongs|length > 0 %}
+<ul class="list-group">
+    {% for chuong in truyen.chuongs %}
+        <li class="list-group-item">
+            <a href="#chuong-{{ chuong.id }}">{{ chuong.tenchuong }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% for chuong in truyen.chuongs %}
+    <div class="content" id="chuong-{{ chuong.id }}">
+        <h3 class="page-header">{{ chuong.tenchuong }}</h3>
+        {% for paragraph in chuong.noidung|split('<br>') %}
+            <p>{{ paragraph|trim }}</p>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+    {% else %}
+<p>Chưa có chương thì xem cái gì, đã đang bài đâu/p>
+    {% endif %}
+    {% endblock %}

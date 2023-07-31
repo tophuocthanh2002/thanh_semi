@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="truyen_tentruyen">Tên truyện:</label>
+        {{ form_widget(form.tentruyen, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Tên truyện'
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.tentruyen) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="truyen_tacgia">Tác giả:</label>
+        {{ form_widget(form.tacgia, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Tác giả'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="truyen_theloai">Thể loại:</label>
+        {{ form_widget(form.theloai, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Thể loại'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="truyen_hinhanh">Hình ảnh:</label>
+        {{ form_widget(form.hinhanh, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Hình ảnh'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="truyen_mota">Mô tả:</label>
+        {{ form_widget(form.mota, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Mô tả'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="truyen_ngaydang">Ngày đăng:</label>
+        {{ form_widget(form.ngaydang, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'Ngày đăng'
+            }
+        }) }}
+    </div>
+
+    <input type="submit" name="nguoidung_edit" value="Edit" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}
